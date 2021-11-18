@@ -29,10 +29,11 @@ $(function () {
   $("#form_reg").on("submit", function (e) {
     e.preventDefault();
     $.post(
-      "http://api-breakingnews-web.itheima.net/api/reguser",
+      "/api/reguser",
       {
         username: $(".reg-page [name=username]").val(),
         password: $(".reg-page [name=password]").val(),
+        // repassword: $(".reg-page [name=repassword]").val(),
       },
       function (res) {
         if (res.status !== 0) {
@@ -50,7 +51,7 @@ $(function () {
     //阻止默认提交行为
     e.preventDefault();
     $.post(
-      "http://api-breakingnews-web.itheima.net/api/login",
+      "/api/login",
       {
         username: $(".login-page [name=username]").val(),
         password: $(".login-page [name=password]").val(),
